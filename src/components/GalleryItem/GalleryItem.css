@@ -1,0 +1,11 @@
+.image {
+    width: 200px;
+    height: auto;
+}
+.itemBox {
+    display:flex;
+    flex-direction: column;
+} 
+.likeButton {
+    width: fit-content;
+}
