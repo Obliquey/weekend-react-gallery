@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import GalleryList from '../GalleryList/GalleryList.jsx'
+import GalleryList from '../GalleryList/GalleryList.jsx';
+import AddForm from '../AddForm/AddForm';
 
 
 function App() {
@@ -12,6 +13,20 @@ function App() {
   React.useEffect(() => {
     fetchGallery();
   }, [])
+
+  // POST route for new photo submission
+  const postPhoto = (data) => {
+    axios({
+      method: 'POST',
+      url:'/gallery',
+      data: { path: data.path, description: data.description }
+    }).then((res) => {
+      console.log("Successfully posted new photo", res.data);
+      fetchGallery();
+    }).catch((err) => {
+      console.log("Error posting photo to db", err);
+    })
+  }
 
   // need PUT route for likes 
   const updateLikes = (id) => {
@@ -43,7 +58,9 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        {/* <img src="images/goat_small.jpg"/> */}
+        <AddForm 
+          postPhoto={postPhoto}
+        />
         <div className='images'>
           <GalleryList 
               photos={photoGallery}
