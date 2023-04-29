@@ -5,7 +5,7 @@ import './GalleryList.css'
 
 function GalleryList(props) {
 
-    console.log("In GalleryList, here are the photos", props.photos)
+    // console.log("In GalleryList, here are the photos", props.photos)
 
     return (
 
@@ -21,6 +21,8 @@ function GalleryList(props) {
                         description={photo.description}
                         likes={photo.likes}
                         className="item"
+                        likePhoto={props.likePhoto}
+                        id={photo.id}
                     />
                 </span>
             })}
