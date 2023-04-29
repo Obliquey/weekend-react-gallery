@@ -3,10 +3,12 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-image: linear-gradient(lightgreen 0% 50%, white );
   padding: 1em;
   color: white;
   margin-bottom: 1em;
+  font-size: 1.4em;
+  font-style: oblique;
 }
 
 .App-title {
