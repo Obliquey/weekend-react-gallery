@@ -6,6 +6,27 @@ const pool = require('../modules/pool');
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 // "TRY ME" ~Anders
 
+// POST ROUTE
+router.post('/', (req, res) => {
+    console.log("In POST route, here's data to send to db:", req.body);
+
+    const sqlText = `
+        INSERT INTO gallery ("path", "description", "likes")
+            VALUES
+            ($1, $2, $3);
+    `;
+
+    const sqlValues = [req.body.path, req.body.description, 0];
+
+    pool.query(sqlText, sqlValues)
+        .then((dbRes) => {
+            console.log("Successfully POSTed to DB:", dbRes);
+            res.sendStatus(201);
+        }).catch((dbErr) => {
+            console.log("Error POSTing to db:", dbErr);
+        })
+})
+
 // PUT Route
 router.put('/like/:id', (req, res) => {
     const galleryId = req.params.id;

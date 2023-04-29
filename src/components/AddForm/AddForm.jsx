@@ -11,6 +11,8 @@ function AddForm(props) {
         console.log('Submit Button Clicked');
         const submission = {path: submittedPic, description: submittedDescription}
 
+        setSubmittedDescription('');
+        setSubmittedPic('');
         props.postPhoto(submission);
     }
 

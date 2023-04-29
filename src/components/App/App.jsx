@@ -23,6 +23,7 @@ function App() {
     }).then((res) => {
       console.log("Successfully posted new photo", res.data);
       fetchGallery();
+      return true;
     }).catch((err) => {
       console.log("Error posting photo to db", err);
     })
