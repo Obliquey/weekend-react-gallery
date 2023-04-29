@@ -11,7 +11,7 @@ function GalleryList(props) {
 
         // put images in a span to be easily manipulated with CSS to look nice.
         <>
-            {/* use .map() to go send each photo through to GalleryItem to be displayed. */}
+            {/* use .map() to send each photo through to GalleryItem to be displayed. */}
             {props.photos.map(photo => {
                 // do I need to have explicitly laid out all the props that I'm sending to GalleryItem? Or could I have just passed photo as a prop and extracted it's data there??
                  

@@ -13,13 +13,16 @@ function App() {
     fetchGallery();
   }, [])
 
+  const updateLikes = () => {
+    
+  }
+  // Our GET req for photos
   const fetchGallery = () => {
         
     axios({
         method: 'GET',
         url: '/gallery'
     }).then((res) => {
-        // console.log("Got our Gallery:", res.data);
         setPhotoGallery(res.data);
     }).catch((err) => {
         console.log("Error sending GET req", err);
