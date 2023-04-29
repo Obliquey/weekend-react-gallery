@@ -38,6 +38,7 @@ function GalleryItem(props) {
                     {showImage()}
                     <span className="UI">
                         <button className="likeButton" onClick={() => props.likePhoto(props.id)}>♥️</button>
+                        <button className="deleteButton" onClick={() => props.deletePhoto(props.id)}>𝐗</button>
                         <p className="likesCount">{props.likes} likes!</p>
                     </span>
                 </span>

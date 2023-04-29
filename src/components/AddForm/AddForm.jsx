@@ -9,6 +9,7 @@ function AddForm(props) {
     const handleClick = (event) => {
         event.preventDefault();
         console.log('Submit Button Clicked');
+        // package photo and description together to send it to DB using postPhoto()
         const submission = {path: submittedPic, description: submittedDescription}
 
         setSubmittedDescription('');

@@ -14,11 +14,25 @@ function App() {
     fetchGallery();
   }, [])
 
+  // DELETE route for specific photo deletion
+  const deletePhoto = (id) => {
+    axios({
+      method: 'DELETE',
+      url: `/gallery/${id}`
+    }).then((res) => {
+      console.log("Successfully deleted item");
+      fetchGallery();
+    }).catch((err) => {
+      console.log("Couldn't delete item:", err);
+    })
+  } // end deletePhoto
+  
   // POST route for new photo submission
   const postPhoto = (data) => {
     axios({
       method: 'POST',
       url:'/gallery',
+      // data package sent to db takes function argument object, which has the paramters of path and description.
       data: { path: data.path, description: data.description }
     }).then((res) => {
       console.log("Successfully posted new photo", res.data);
@@ -27,9 +41,9 @@ function App() {
     }).catch((err) => {
       console.log("Error posting photo to db", err);
     })
-  }
+  }// end postPhoto
 
-  // need PUT route for likes 
+  // need PUT route for likes, uses fetchGallery() to refresh after updating DB
   const updateLikes = (id) => {
     axios({
       method: 'PUT',
@@ -40,8 +54,8 @@ function App() {
     }).catch((err) => {
       console.log("Couldn't update db with likes", err);
     })
-  }
-  // Our GET req for photos
+  } //end updateLikes
+  // Our GET req for photos, also sent to GalleryList and AddForm to refresh page after db changes
   const fetchGallery = () => {
         
     axios({
@@ -52,7 +66,7 @@ function App() {
     }).catch((err) => {
         console.log("Error sending GET req", err);
     });
-}
+} // end fetchGallery
 
     return (
       <div className="App">
@@ -67,6 +81,7 @@ function App() {
               photos={photoGallery}
               fetchPhotos={fetchGallery}
               likePhoto={updateLikes}
+              deletePhoto={deletePhoto}
           />
         </div> 
       </div>

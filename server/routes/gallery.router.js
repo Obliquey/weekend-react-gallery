@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 // const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool');
+const { Console } = require('console');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 // "TRY ME" ~Anders
@@ -25,7 +26,7 @@ router.post('/', (req, res) => {
         }).catch((dbErr) => {
             console.log("Error POSTing to db:", dbErr);
         })
-})
+})//END POST route
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
@@ -60,5 +61,22 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
         })
 }); // END GET Route
+
+// DELETE route
+router.delete('/:id', (req, res) => {
+
+    let sqlText = `
+        DELETE FROM gallery
+            WHERE id = $1;
+    `;
+
+    pool.query(sqlText, [req.params.id])
+        .then((dbRes) => {
+            console.log("Successfully Deleted item:", dbRes);
+            res.sendStatus(200);
+        }).catch((dbErr) => {
+            console.log("Error connecting to DB in DELETE route:", dbErr);
+        })
+}) // end DELETE route
 
 module.exports = router;
