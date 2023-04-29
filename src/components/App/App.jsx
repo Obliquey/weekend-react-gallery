@@ -15,7 +15,6 @@ function App() {
 
   // need PUT route for likes 
   const updateLikes = (id) => {
-    console.log("In updateLikes")
     axios({
       method: 'PUT',
       url: `/gallery/like/${id}`,

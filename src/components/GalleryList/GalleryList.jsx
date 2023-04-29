@@ -15,7 +15,7 @@ function GalleryList(props) {
             {props.photos.map(photo => {
                 // do I need to have explicitly laid out all the props that I'm sending to GalleryItem? Or could I have just passed photo as a prop and extracted it's data there??
                  
-                return<span className="image" key={photo.id}>
+                return<span className="Singleimage" key={photo.id}>
                     <GalleryItem 
                         path={photo.path}
                         description={photo.description}

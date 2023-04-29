@@ -36,8 +36,10 @@ function GalleryItem(props) {
             {
                 <span className="itemBox">
                     {showImage()}
-                    <button className="likeButton" onClick={() => props.likePhoto(props.id)}>♥️</button>
-                    <p>{props.likes} likes!</p>
+                    <span className="UI">
+                        <button className="likeButton" onClick={() => props.likePhoto(props.id)}>♥️</button>
+                        <p className="likesCount">{props.likes} likes!</p>
+                    </span>
                 </span>
             }
 
