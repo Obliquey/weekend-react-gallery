@@ -1,6 +1,18 @@
 .image {
     width: 200px;
     height: auto;
+    border: 5px solid;
+    border-image: linear-gradient(#000000, #0cf) 30;
+    border-image-outset: 5px;
+}
+.image:hover {
+    opacity: 0.7;
+    width: 210px;
+    height: auto;
+}
+.description {
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .itemBox {
     display:flex;
@@ -8,4 +20,14 @@
 } 
 .likeButton {
     width: fit-content;
+    align-self: center;
+    margin-top: 1px;
+    margin-right: 10px;
+    padding: 1px 5px;
+}
+.UI {
+    margin-top: -5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

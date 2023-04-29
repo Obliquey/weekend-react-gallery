@@ -11,7 +11,7 @@ const galleryItems = [
     { id: 10, path: 'images/MyGoodFriendsBeingGoons.jpg', description: "My friends are goons, but they're my goons", likes: 0 },
     { id: 11, path: 'images/MyTeamInEthiopia.jpg', description: 'The incredible people I lived and worked with in Ethiopia', likes: 0 },
     { id: 12, path: 'images/OneTimeIMetJoshDun.jpg', description: 'Terrible picture, but one time I met Josh Dun. That was pretty cool', likes: 0 },
-    { id: 13, path: 'images/SunriseWithBalloonsOverCapadocia.jpg', description: 'Watching the hot air balloons rise over the capadocian landscape is something else', likes: 0 },
+    { id: 13, path: 'images/SunriseWithBalloonsOverCapadocia.jpg', description: 'Watching the hot air balloons rise over the Capadocian landscape is something else', likes: 0 },
     { id: 14, path: 'images/TheLibraryAtEphesus.jpg', description: 'Ephesus was very cool. This is the library', likes: 0 },
     { id: 15, path: 'images/TheOnlyTimeIHadAProperVikingBeard.jpg', description: 'My Viking heritage sadly ends right before the beard and muscle genes', likes: 0 },
     { id: 16, path: 'images/Velma&Shaggy.jpg', description: 'I never realized how much I look like Shaggy until I got second place in a Halloween costume contest', likes: 0 },
