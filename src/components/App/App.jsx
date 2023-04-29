@@ -25,7 +25,8 @@ function App() {
     }).catch((err) => {
       console.log("Couldn't delete item:", err);
     })
-  }
+  } // end deletePhoto
+  
   // POST route for new photo submission
   const postPhoto = (data) => {
     axios({
@@ -40,7 +41,7 @@ function App() {
     }).catch((err) => {
       console.log("Error posting photo to db", err);
     })
-  }
+  }// end postPhoto
 
   // need PUT route for likes, uses fetchGallery() to refresh after updating DB
   const updateLikes = (id) => {
@@ -53,7 +54,7 @@ function App() {
     }).catch((err) => {
       console.log("Couldn't update db with likes", err);
     })
-  }
+  } //end updateLikes
   // Our GET req for photos, also sent to GalleryList and AddForm to refresh page after db changes
   const fetchGallery = () => {
         
@@ -65,7 +66,7 @@ function App() {
     }).catch((err) => {
         console.log("Error sending GET req", err);
     });
-}
+} // end fetchGallery
 
     return (
       <div className="App">
