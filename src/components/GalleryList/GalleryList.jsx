@@ -23,6 +23,7 @@ function GalleryList(props) {
                         className="item"
                         likePhoto={props.likePhoto}
                         id={photo.id}
+                        deletePhoto={props.deletePhoto}
                     />
                 </span>
             })}
