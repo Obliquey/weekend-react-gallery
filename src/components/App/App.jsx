@@ -13,8 +13,18 @@ function App() {
     fetchGallery();
   }, [])
 
-  const updateLikes = () => {
-    
+  // need PUT route for likes 
+  const updateLikes = (id) => {
+    console.log("In updateLikes")
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${id}`,
+    }).then((res) => {
+      console.log('Successfully update likes', res.data);
+      fetchGallery();
+    }).catch((err) => {
+      console.log("Couldn't update db with likes", err);
+    })
   }
   // Our GET req for photos
   const fetchGallery = () => {
@@ -40,6 +50,7 @@ function App() {
           <GalleryList 
               photos={photoGallery}
               fetchPhotos={fetchGallery}
+              likePhoto={updateLikes}
           />
         </div> 
       </div>
